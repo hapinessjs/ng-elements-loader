@@ -4,8 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { from, Observable, of, throwError } from 'rxjs';
 import { flatMap, map } from 'rxjs/operators';
 
-import { ElementsLoaderService } from './elements-loader.service';
-import { CustomElementModuleSelector } from './elements-registry';
+import { CustomElementModuleSelector, ElementsLoaderService } from '@hapiness/ng-elements-loader';
 import { ElementsLoaderModule } from './elements-loader.module';
 
 // enable production mode

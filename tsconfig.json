@@ -19,6 +19,9 @@
     "paths": {
       "ng-elements-loader": [
         "dist/ng-elements-loader"
+      ],
+      "custom-elements-loader": [
+        "dist/custom-elements-loader"
       ]
     }
   }

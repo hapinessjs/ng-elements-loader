@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ElementsLoaderService } from './elements-loader.service';
+import { ElementsLoaderService } from '@hapiness/ng-elements-loader';
 
 @NgModule({
     imports: [
