@@ -1,0 +1,57 @@
+{
+    "name": "@hapiness/custom-elements-loader",
+    "version": "6.0.0",
+    "description": "Factory to load Angular Custom Elements inside JavaScript's applications like React.js, Vue.js or just standalone",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/hapinessjs/ng-elements-loader.git"
+    },
+    "keywords": [
+        "Angular",
+        "Library",
+        "Elements",
+        "Custom",
+        "DOM",
+        "Loader",
+        "Standalone",
+        "React",
+        "WebComponent",
+        "Factory"
+    ],
+    "contributors": [
+        {
+            "name": "Julien Fauville",
+            "url": "https://github.com/Juneil"
+        },
+        {
+            "name": "Antoine Gomez",
+            "url": "https://github.com/antoinegomez"
+        },
+        {
+            "name": "Sébastien Ritz",
+            "url": "https://github.com/reptilbud"
+        },
+        {
+            "name": "Nicolas Jessel",
+            "url": "https://github.com/njl07"
+        }
+    ],
+    "license": "SEE LICENSE IN https://github.com/hapinessjs/ng-elements-loader/blob/master/LICENSE.md",
+    "bugs": {
+        "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
+    },
+    "dependencies": {
+        "@angular/common": "^6.0.0",
+        "@angular/core": "^6.0.0",
+        "@angular/compiler": "^6.0.0",
+        "@angular/elements": "^6.0.0",
+        "@angular/platform-browser": "^6.0.0",
+        "@angular/platform-browser-dynamic": "^6.0.0",
+        "@hapiness/ng-elements-loader": "^6.0.0",
+        "core-js": "^2.5.5",
+        "document-register-element": "^1.1.0",
+        "rxjs": "^6.1.0",
+        "zone.js": "^0.8.26"
+    }
+}
