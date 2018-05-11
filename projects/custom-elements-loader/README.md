@@ -188,7 +188,7 @@ The minimum `package.json` file for your module is described below:
 }
 ```
 
-If your module has to others **dependencies** not installed automatically by `@hapiness/custom-elements-loader` like explained in [installation](#installation), you must add them in **dependencies** section.
+If your module has to have others **dependencies** not installed automatically by `@hapiness/custom-elements-loader` like explained in [installation](#installation), you must add them in **dependencies** section.
 
 #### - Publish your module
 
