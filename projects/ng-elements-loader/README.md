@@ -194,7 +194,7 @@ The minimum `package.json` file for your module is described below:
 }
 ```
 
-If your module has to others `Angular` **dependencies**, add them in `peerDependencies`. If your module has to **externals dependencies**, add them in `dependencies` like that they will be automatically installed.
+If your module has to have others `Angular` **dependencies**, add them in `peerDependencies`. If your module has to have **externals dependencies**, add them in `dependencies` like that they will be automatically installed.
 
 #### - Publish your module
 
