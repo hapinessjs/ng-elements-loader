@@ -172,6 +172,24 @@ export class MadeWithLoveModule implements WithCustomElementComponent {
 
 **Note**: Your module **must** implement `WithCustomElementComponent` interface exposed by `@hapiness/ng-elements-loader` and, component **must** be declared inside `entryComponents` and `declaration` **meta-data** of `NgModule`.
 
+#### - Dependencies
+
+The minimum `package.json` file for your module is described below:
+
+**projects/made-with-love/package.json**:
+
+```json
+{
+  "name": "made-with-love",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@hapiness/custom-elements-loader": "^6.0.1"
+  }
+}
+```
+
+If your module has to others **dependencies** not installed automatically by `@hapiness/custom-elements-loader` like explained in [installation](#installation), you must add them in **dependencies** section.
+
 #### - Publish your module
 
 Your `custom-element` module is now ready to be used so you have to publish it before use it in your application.
@@ -390,6 +408,9 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.0.1 (2018-05-11)
+    * `Angular v6.0.1+`
+    * Documentation
 * v6.0.0 (2018-05-07)
     * `Angular v6.0.0+`
     * Implementation of `ElementsLoader` factory
