@@ -189,7 +189,7 @@ The minimum `package.json` file for your module is described below:
   "peerDependencies": {
     "@angular/common": "^6.0.1",
     "@angular/core": "^6.0.1",
-    "@hapiness/ng-elements-loader": "^6.0.1"
+    "@hapiness/ng-elements-loader": "^6.0.2"
   }
 }
 ```
@@ -410,6 +410,9 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
+* v6.0.2 (2018-05-13)
+    * Delete barrels for `universal` rendering
+    * Documentation
 * v6.0.1 (2018-05-11)
     * `Angular v6.0.1+`
     * Documentation

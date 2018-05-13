@@ -17,10 +17,10 @@
       "dom"
     ],
     "paths": {
-      "ng-elements-loader": [
+      "@hapiness/ng-elements-loader": [
         "dist/ng-elements-loader"
       ],
-      "custom-elements-loader": [
+      "@hapiness/custom-elements-loader": [
         "dist/custom-elements-loader"
       ]
     }
