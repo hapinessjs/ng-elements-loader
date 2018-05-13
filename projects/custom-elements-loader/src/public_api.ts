@@ -2,4 +2,4 @@
  * Public API Surface of custom-elements-loader
  */
 
-export * from './lib';
+export { ElementsLoader } from './lib/elements-loader.factory';
