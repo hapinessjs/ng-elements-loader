@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.0.2"
+    "@hapiness/custom-elements-loader": "^6.0.3"
   }
 }
 ```
@@ -408,6 +408,9 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.0.3 (2018-05-25)
+    * `Angular v6.0.3+`
+    * Documentation
 * v6.0.2 (2018-05-13)
     * Delete barrels
     * Documentation

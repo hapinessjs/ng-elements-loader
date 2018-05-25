@@ -1,6 +1,6 @@
 {
     "name": "@hapiness/ng-elements-loader",
-    "version": "6.0.2",
+    "version": "6.0.3",
     "description": "Service to load Angular Custom Elements inside Angular's applications",
     "private": false,
     "repository": {
