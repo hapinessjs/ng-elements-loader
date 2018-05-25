@@ -408,6 +408,9 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.0.2 (2018-05-25)
+    * `Angular v6.0.3+`
+    * Documentation
 * v6.0.1 (2018-05-11)
     * `Angular v6.0.1+`
     * Documentation
