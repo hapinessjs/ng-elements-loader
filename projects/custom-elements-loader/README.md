@@ -44,7 +44,7 @@ or
 $ npm install --save @hapiness/custom-elements-loader
 ```
 
-**All required dependencies will be automatically installed** : `@angular/common`, `@angular/core`, `@angular/compiler`, `@angular/elements`, `@angular/platform-browser`, `@angular/platform-browser-dynamic`, `@hapiness/ng-elements-loader`, `core-js`, `document-register-element`, `rxjs` and `zone.js`.
+**All required dependencies will be automatically installed** : `@angular/animations`, `@angular/common`, `@angular/core`, `@angular/compiler`, `@angular/elements`, `@angular/platform-browser`, `@angular/platform-browser-dynamic`, `@hapiness/ng-elements-loader`, `core-js`, `document-register-element`, `rxjs` and `zone.js`.
 
 **If your custom element module must have more dependencies, you must install them by yourself**
 
@@ -408,6 +408,11 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.1.0 (2018-06-04)
+    * Expose `BrowserAnimationsModule` instead of `BrowserModule` to support module with animations.
+    * Fix configuration in `ng-package*.json`
+    * Latest packages' versions
+    * Documentation
 * v6.0.3 (2018-05-25)
     * `Angular v6.0.3+`
     * Documentation
