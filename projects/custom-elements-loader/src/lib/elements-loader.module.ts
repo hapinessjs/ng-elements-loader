@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ElementsLoaderService } from '@hapiness/ng-elements-loader';
 
 @NgModule({
     imports: [
-        BrowserModule
+        BrowserAnimationsModule
     ]
 })
 export class ElementsLoaderModule {

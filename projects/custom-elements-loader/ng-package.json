@@ -6,6 +6,7 @@
         "entryFile": "src/public_api.ts"
     },
     "whitelistedNonPeerDependencies": [
+        "@angular/animations",
         "@angular/common",
         "@angular/core",
         "@angular/compiler",
