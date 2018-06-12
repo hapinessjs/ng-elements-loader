@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.0.3"
+    "@hapiness/custom-elements-loader": "^6.1.1"
   }
 }
 ```
@@ -408,6 +408,10 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.1.1 (2018-06-12)
+    * Downgrade `document-register-element` to `v1.8.1` to fix angular issue [#24390](https://github.com/angular/angular/issues/24390)
+    * Latest packages' versions
+    * Documentation
 * v6.1.0 (2018-06-04)
     * Expose `BrowserAnimationsModule` instead of `BrowserModule` to support module with animations.
     * Fix configuration in `ng-package*.json`

@@ -187,9 +187,9 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.3",
-    "@angular/core": "^6.0.3",
-    "@hapiness/ng-elements-loader": "^6.1.0"
+    "@angular/common": "^6.0.4",
+    "@angular/core": "^6.0.4",
+    "@hapiness/ng-elements-loader": "^6.1.1"
   }
 }
 ```
@@ -410,6 +410,10 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
+* v6.1.1 (2018-06-12)
+    * Downgrade `document-register-element` to `v1.8.1` to fix angular issue [#24390](https://github.com/angular/angular/issues/24390)
+    * Latest packages' versions
+    * Documentation
 * v6.1.0 (2018-06-04)
     * Fix configuration in `ng-package*.json`
     * Latest packages' versions
