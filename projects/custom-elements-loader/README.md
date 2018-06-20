@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.3.0"
+    "@hapiness/custom-elements-loader": "^6.3.1"
   }
 }
 ```
@@ -408,6 +408,8 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.3.1 (2018-06-20)
+    * Delete `ShadowDomV1Renderer` factory because not compatible with multi-components
 * v6.3.0 (2018-06-20)
     * Use `ShadowDomV1Renderer` factory from `@hapiness/ng-shadow-dom-renderer` to fix angular issue [#24397](https://github.com/angular/angular/issues/24397)
     * Latest packages' versions

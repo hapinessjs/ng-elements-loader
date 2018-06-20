@@ -1,6 +1,6 @@
 {
   "name": "@hapiness/ng-elements-loader-cli",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "description": "Angular CLI project to manage @hapiness/ng-elements-loader and @hapiness/custom-elements-loader projects",
   "scripts": {
     "build:ng": "ng build 'ng-elements-loader' --prod",
