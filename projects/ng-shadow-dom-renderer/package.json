@@ -1,7 +1,7 @@
 {
-    "name": "@hapiness/custom-elements-loader",
+    "name": "@hapiness/ng-shadow-dom-renderer",
     "version": "6.3.0",
-    "description": "Factory to load Angular Custom Elements inside JavaScript's applications like React.js, Vue.js or just standalone",
+    "description": "Factory to use the shadow DOM V1 spec in Angular renderer until it's fix in core",
     "private": false,
     "repository": {
         "type": "git",
@@ -10,14 +10,10 @@
     "keywords": [
         "Angular",
         "Library",
-        "Elements",
-        "Custom",
+        "Renderer",
+        "Shadow",
         "DOM",
-        "Loader",
-        "Standalone",
-        "React",
-        "WebComponent",
-        "Factory"
+        "WebComponent"
     ],
     "contributors": [
         {
@@ -41,19 +37,8 @@
     "bugs": {
         "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
     },
-    "dependencies": {
-        "@angular/animations": "^6.0.5",
-        "@angular/common": "^6.0.5",
+    "peerDependencies": {
         "@angular/core": "^6.0.5",
-        "@angular/compiler": "^6.0.5",
-        "@angular/elements": "^6.0.5",
-        "@angular/platform-browser": "^6.0.5",
-        "@angular/platform-browser-dynamic": "^6.0.5",
-        "@hapiness/ng-elements-loader": "^6.3.0",
-        "@hapiness/ng-shadow-dom-renderer": "^6.3.0",
-        "core-js": "^2.5.7",
-        "document-register-element": "~1.8.1",
-        "rxjs": "^6.2.1",
-        "zone.js": "^0.8.26"
+        "@angular/platform-browser": "^6.0.5"
     }
 }

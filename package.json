@@ -1,85 +1,87 @@
 {
-    "name": "@hapiness/ng-elements-loader-cli",
-    "version": "6.1.1",
-    "description": "Angular CLI project to manage @hapiness/ng-elements-loader and @hapiness/custom-elements-loader projects",
-    "scripts": {
-        "build:ng": "ng build 'ng-elements-loader' --prod",
-        "build:custom": "ng build 'custom-elements-loader' --prod"
+  "name": "@hapiness/ng-elements-loader-cli",
+  "version": "6.3.0",
+  "description": "Angular CLI project to manage @hapiness/ng-elements-loader and @hapiness/custom-elements-loader projects",
+  "scripts": {
+    "build:ng": "ng build 'ng-elements-loader' --prod",
+    "build:custom": "ng build 'custom-elements-loader' --prod",
+    "build:sdr": "ng build 'ng-shadow-dom-renderer' --prod"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hapinessjs/ng-elements-loader.git"
+  },
+  "keywords": [
+    "Angular",
+    "Library",
+    "Elements",
+    "Custom",
+    "Shadow",
+    "DOM",
+    "Loader",
+    "Standalone",
+    "React",
+    "WebComponent"
+  ],
+  "contributors": [
+    {
+      "name": "Julien Fauville",
+      "url": "https://github.com/Juneil"
     },
-    "private": true,
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/hapinessjs/ng-elements-loader.git"
+    {
+      "name": "Antoine Gomez",
+      "url": "https://github.com/antoinegomez"
     },
-    "keywords": [
-        "Angular",
-        "Library",
-        "Elements",
-        "Custom",
-        "DOM",
-        "Loader",
-        "Standalone",
-        "React",
-        "WebComponent"
-    ],
-    "contributors": [
-        {
-            "name": "Julien Fauville",
-            "url": "https://github.com/Juneil"
-        },
-        {
-            "name": "Antoine Gomez",
-            "url": "https://github.com/antoinegomez"
-        },
-        {
-            "name": "Sébastien Ritz",
-            "url": "https://github.com/reptilbud"
-        },
-        {
-            "name": "Nicolas Jessel",
-            "url": "https://github.com/njl07"
-        }
-    ],
-    "license": "SEE LICENSE IN https://github.com/hapinessjs/ng-elements-loader/blob/master/LICENSE.md",
-    "bugs": {
-        "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
+    {
+      "name": "Sébastien Ritz",
+      "url": "https://github.com/reptilbud"
     },
-    "dependencies": {
-        "@angular/animations": "^6.0.4",
-        "@angular/common": "^6.0.4",
-        "@angular/compiler": "^6.0.4",
-        "@angular/core": "^6.0.4",
-        "@angular/elements": "^6.0.4",
-        "@angular/platform-browser": "^6.0.4",
-        "@angular/platform-browser-dynamic": "^6.0.4",
-        "core-js": "^2.5.7",
-        "document-register-element": "~1.8.1",
-        "rxjs": "^6.2.1",
-        "zone.js": "^0.8.26"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "~0.7.0-beta.2",
-        "@angular-devkit/build-ng-packagr": "~0.7.0-beta.2",
-        "@angular/cli": "^6.0.8",
-        "@angular/compiler-cli": "^6.0.4",
-        "@angular/language-service": "^6.0.4",
-        "@types/jasmine": "~2.8.8",
-        "@types/jasminewd2": "~2.0.3",
-        "@types/node": "~10.3.2",
-        "codelyzer": "~4.3.0",
-        "jasmine-core": "~3.1.0",
-        "jasmine-spec-reporter": "~4.2.1",
-        "karma": "~2.0.2",
-        "karma-chrome-launcher": "~2.2.0",
-        "karma-coverage-istanbul-reporter": "~2.0.1",
-        "karma-jasmine": "~1.1.2",
-        "karma-jasmine-html-reporter": "^1.1.0",
-        "ng-packagr": "^3.0.1",
-        "protractor": "~5.3.2",
-        "ts-node": "~6.1.1",
-        "tsickle": "^0.29.0",
-        "tslib": "^1.9.2",
-        "tslint": "~5.10.0",
-        "typescript": "~2.7.2"
+    {
+      "name": "Nicolas Jessel",
+      "url": "https://github.com/njl07"
     }
+  ],
+  "license": "SEE LICENSE IN https://github.com/hapinessjs/ng-elements-loader/blob/master/LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
+  },
+  "dependencies": {
+    "@angular/common": "^6.0.5",
+    "@angular/core": "^6.0.5",
+    "@angular/compiler": "^6.0.5",
+    "@angular/animations": "^6.0.5",
+    "@angular/elements": "^6.0.5",
+    "@angular/platform-browser": "^6.0.5",
+    "@angular/platform-browser-dynamic": "^6.0.5",
+    "core-js": "^2.5.7",
+    "document-register-element": "~1.8.1",
+    "rxjs": "^6.2.1",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^6.0.5",
+    "@angular-devkit/build-ng-packagr": "~0.7.0-rc.0",
+    "@angular-devkit/build-angular": "~0.7.0-rc.0",
+    "ng-packagr": "^3.0.3",
+    "tsickle": "^0.29.0",
+    "tslib": "^1.9.2",
+    "typescript": "~2.7.2",
+    "@angular/cli": "^6.0.8",
+    "@angular/language-service": "^6.0.5",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~10.3.4",
+    "codelyzer": "~4.3.0",
+    "jasmine-core": "~3.1.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.3",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^1.1.0",
+    "protractor": "~5.3.2",
+    "ts-node": "~6.1.1",
+    "tslint": "~5.10.0"
+  }
 }

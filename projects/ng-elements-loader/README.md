@@ -42,10 +42,6 @@ $ yarn add @hapiness/ng-elements-loader
 or
 
 $ npm install --save @hapiness/ng-elements-loader
-
-or
-
-$ ng add @hapiness/ng-elements-loader
 ```
 
 **Don't miss to install all peer dependencies if not yet done** : `@angular/common`, `@angular/core`, `@angular/compiler`, `@angular/elements`, `@angular/platform-browser`, `@angular/platform-browser-dynamic`, `core-js`, `document-register-element`, `rxjs` and `zone.js`.
@@ -187,9 +183,9 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.4",
-    "@angular/core": "^6.0.4",
-    "@hapiness/ng-elements-loader": "^6.1.1"
+    "@angular/common": "^6.0.5",
+    "@angular/core": "^6.0.5",
+    "@hapiness/ng-elements-loader": "^6.3.0"
   }
 }
 ```
@@ -410,6 +406,9 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
+* v6.2.0 (2018-06-20)
+    * Latest packages' versions
+    * Documentation
 * v6.1.1 (2018-06-12)
     * Downgrade `document-register-element` to `v1.8.1` to fix angular issue [#24390](https://github.com/angular/angular/issues/24390)
     * Latest packages' versions

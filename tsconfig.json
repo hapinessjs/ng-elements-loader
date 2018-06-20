@@ -22,6 +22,9 @@
       ],
       "@hapiness/custom-elements-loader": [
         "dist/custom-elements-loader"
+      ],
+      "@hapiness/ng-shadow-dom-renderer": [
+        "dist/ng-shadow-dom-renderer"
       ]
     }
   }
