@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.2.0"
+    "@hapiness/custom-elements-loader": "^6.3.0"
   }
 }
 ```
