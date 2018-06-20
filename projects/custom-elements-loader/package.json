@@ -1,6 +1,6 @@
 {
     "name": "@hapiness/custom-elements-loader",
-    "version": "6.3.0",
+    "version": "6.3.1",
     "description": "Factory to load Angular Custom Elements inside JavaScript's applications like React.js, Vue.js or just standalone",
     "private": false,
     "repository": {
@@ -50,7 +50,6 @@
         "@angular/platform-browser": "^6.0.5",
         "@angular/platform-browser-dynamic": "^6.0.5",
         "@hapiness/ng-elements-loader": "^6.3.0",
-        "@hapiness/ng-shadow-dom-renderer": "^6.3.0",
         "core-js": "^2.5.7",
         "document-register-element": "~1.8.1",
         "rxjs": "^6.2.1",

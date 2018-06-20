@@ -14,7 +14,6 @@
         "@angular/platform-browser",
         "@angular/platform-browser-dynamic",
         "@hapiness/ng-elements-loader",
-        "@hapiness/ng-shadow-dom-renderer",
         "core-js",
         "document-register-element",
         "rxjs",

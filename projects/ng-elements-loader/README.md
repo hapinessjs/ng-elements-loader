@@ -406,7 +406,7 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
-* v6.2.0 (2018-06-20)
+* v6.3.0 (2018-06-20)
     * Latest packages' versions
     * Documentation
 * v6.1.1 (2018-06-12)
