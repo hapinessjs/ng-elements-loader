@@ -3,3 +3,4 @@
  */
 
 export { ElementsLoader } from './lib/elements-loader.factory';
+export { overrideRenderFactory } from './lib/shadow-dom-renderer';
