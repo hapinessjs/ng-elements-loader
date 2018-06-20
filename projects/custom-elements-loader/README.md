@@ -408,9 +408,8 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
-* v6.2.0 (2018-06-20)
-    * Use `ShadowDomV1Renderer` factory to fix angular issue [#24397](https://github.com/angular/angular/issues/24397)
-    * Expose `overrideRenderFactory()` to be used in `providers` of Angular applications.
+* v6.3.0 (2018-06-20)
+    * Use `ShadowDomV1Renderer` factory from `@hapiness/ng-shadow-dom-renderer` to fix angular issue [#24397](https://github.com/angular/angular/issues/24397)
     * Latest packages' versions
     * Documentation
 * v6.1.1 (2018-06-12)

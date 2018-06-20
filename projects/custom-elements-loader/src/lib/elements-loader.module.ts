@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ElementsLoaderService } from '@hapiness/ng-elements-loader';
-import { overrideRenderFactory } from './shadow-dom-renderer';
+import { overrideRenderFactory } from '@hapiness/ng-shadow-dom-renderer';
 
 @NgModule({
     imports: [

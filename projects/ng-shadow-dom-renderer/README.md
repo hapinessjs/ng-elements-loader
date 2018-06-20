@@ -28,17 +28,55 @@
 </div>
 </div>
 
-# Angular Elements Loader
+# NG-SHADOW-DOM-RENDERER
 
-This project uses [Angular-CLI](https://github.com/angular/angular-cli) to generate `@hapiness/ng-elements-loader` and `@hapiness/custom-elements-loader` projects.
+This module exposes an `Angular's` factory to use the `shadow DOM V1` spec in `Angular renderer` until it's fix in core.
 
-These projects are created to load easily `Angular` [custom elements](https://angular.io/guide/elements) in your `Angular` application and/or others like `React.js`, `Vue.js`, etc.
+We support `Angular` version `6+`.
 
-To know how to use both projects follow these tutorials:
+## Installation
 
-- [@hapiness/ng-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/README.md) => for `Angular` applications
-- [@hapiness/custom-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/custom-elements-loader/README.md) => for others applications
-- [@hapiness/ng-shadow-dom-renderer](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-shadow-dom-renderer/README.md) => factory to use `ShadowDom` v1 spec
+```bash
+$ yarn add @hapiness/ng-shadow-dom-renderer
+
+or
+
+$ npm install --save @hapiness/ng-shadow-dom-renderer
+```
+
+**Don't miss to install all peer dependencies if not yet done** : `@angular/core`, `@angular/platform-browser`.
+
+**If your in an `Angular-CLI` application, all dependencies are already installed.**
+
+## Usage
+
+In your main module add the factory `overrideRenderFactory` exposed by `@hapiness/ng-shadow-dom-renderer`.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { overrideRenderFactory } from '@hapiness/ng-shadow-dom-renderer';
+
+@NgModule({
+    imports: [
+        BrowserAnimationsModule
+    ],
+    providers: [overrideRenderFactory()]
+})
+export class AppModule {}
+```
+
+[Back to top](#installation)
+
+## Change History
+* v6.3.0 (2018-06-20)
+    * Create `ShadowDomV1Renderer` to fix angular issue [#24397](https://github.com/angular/angular/issues/24397).
+    * Expose factory `overrideRenderFactory` to be used inside `Angular` applications.
+    * Version related to others modules of this packages.
+    * Documentation.
+    
+[Back to top](#installation)
 
 ## Maintainers
 
@@ -60,6 +98,10 @@ To know how to use both projects follow these tutorials:
     </tr>
 </table>
 
+[Back to top](#installation)
+
 ## License
 
 Copyright (c) 2018 **Hapiness** Licensed under the [MIT license](https://github.com/hapinessjs/ng-elements-loader/blob/master/LICENSE.md).
+
+[Back to top](#installation)

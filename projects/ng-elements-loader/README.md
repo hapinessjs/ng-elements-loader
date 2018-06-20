@@ -42,10 +42,6 @@ $ yarn add @hapiness/ng-elements-loader
 or
 
 $ npm install --save @hapiness/ng-elements-loader
-
-or
-
-$ ng add @hapiness/ng-elements-loader
 ```
 
 **Don't miss to install all peer dependencies if not yet done** : `@angular/common`, `@angular/core`, `@angular/compiler`, `@angular/elements`, `@angular/platform-browser`, `@angular/platform-browser-dynamic`, `core-js`, `document-register-element`, `rxjs` and `zone.js`.
@@ -189,7 +185,7 @@ The minimum `package.json` file for your module is described below:
   "peerDependencies": {
     "@angular/common": "^6.0.5",
     "@angular/core": "^6.0.5",
-    "@hapiness/ng-elements-loader": "^6.2.0"
+    "@hapiness/ng-elements-loader": "^6.3.0"
   }
 }
 ```

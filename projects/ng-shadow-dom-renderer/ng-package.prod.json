@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ng-shadow-dom-renderer",
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  }
+}
