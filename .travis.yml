@@ -3,5 +3,4 @@ node_js:
   - "node"
 script:
   - yarn run build:ng
-  - yarn run build:sdr
   - yarn run build:custom

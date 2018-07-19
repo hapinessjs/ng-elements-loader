@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.3.1"
+    "@hapiness/custom-elements-loader": "^6.3.2"
   }
 }
 ```
@@ -408,6 +408,9 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.3.2 (2018-07-19)
+    * Latest packages' versions
+    * Documentation
 * v6.3.1 (2018-06-20)
     * Delete `ShadowDomV1Renderer` factory because not compatible with multi-components
 * v6.3.0 (2018-06-20)

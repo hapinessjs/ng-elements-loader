@@ -183,9 +183,9 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.5",
-    "@angular/core": "^6.0.5",
-    "@hapiness/ng-elements-loader": "^6.3.0"
+    "@angular/common": "^6.0.9",
+    "@angular/core": "^6.0.9",
+    "@hapiness/ng-elements-loader": "^6.4.0"
   }
 }
 ```
@@ -406,7 +406,7 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
-* v6.3.0 (2018-06-20)
+* v6.3.2 (2018-07-19)
     * Latest packages' versions
     * Documentation
 * v6.1.1 (2018-06-12)
