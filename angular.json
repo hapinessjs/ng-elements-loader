@@ -82,46 +82,6 @@
           }
         }
       }
-    },
-    "ng-shadow-dom-renderer": {
-      "root": "projects/ng-shadow-dom-renderer",
-      "sourceRoot": "projects/ng-shadow-dom-renderer/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ng-shadow-dom-renderer/tsconfig.lib.json",
-            "project": "projects/ng-shadow-dom-renderer/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/ng-shadow-dom-renderer/ng-package.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-shadow-dom-renderer/src/test.ts",
-            "tsConfig": "projects/ng-shadow-dom-renderer/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-shadow-dom-renderer/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ng-shadow-dom-renderer/tsconfig.lib.json",
-              "projects/ng-shadow-dom-renderer/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
     }
   },
   "defaultProject": "ng-elements-loader"

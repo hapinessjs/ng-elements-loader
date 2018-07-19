@@ -38,7 +38,6 @@ To know how to use both projects follow these tutorials:
 
 - [@hapiness/ng-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/README.md) => for `Angular` applications
 - [@hapiness/custom-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/custom-elements-loader/README.md) => for others applications
-- [@hapiness/ng-shadow-dom-renderer](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-shadow-dom-renderer/README.md) => factory to use `ShadowDom` v1 spec but work only with one component
 
 ## Maintainers
 
