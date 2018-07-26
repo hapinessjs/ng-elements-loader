@@ -68,7 +68,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'made-with-love',
   templateUrl: './made-with-love.component.html',
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class MadeWithLoveComponent implements OnInit {
   private _name: string;
@@ -125,7 +125,7 @@ export class MadeWithLoveComponent implements OnInit {
 }
 ```
 
-**Note**: Your component **must** have encapsulation equals to `ViewEncapsulation.Native`.
+**Note**: Your component **must** have encapsulation equals to `ViewEncapsulation.ShadowDom` if you want to have [shadowdomv1](https://developers.google.com/web/fundamentals/web-components/shadowdom) support else you can delete this line to have original support.
 
 **projects/made-with-love/src/lib/made-with-love.component.html**:
 
@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.3.2"
+    "@hapiness/custom-elements-loader": "^6.4.0"
   }
 }
 ```
@@ -327,7 +327,7 @@ import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@ang
   selector: 'hello-world',
   templateUrl: './hello-world.component.html',
   styleUrls: ['./hello-world.component.scss'],
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class HelloWorldComponent implements OnInit {
   private _sayHello$: EventEmitter<string>;
@@ -408,36 +408,8 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
-* v6.3.2 (2018-07-19)
-    * Latest packages' versions
-    * Documentation
-* v6.3.1 (2018-06-20)
-    * Delete `ShadowDomV1Renderer` factory because not compatible with multi-components
-* v6.3.0 (2018-06-20)
-    * Use `ShadowDomV1Renderer` factory from `@hapiness/ng-shadow-dom-renderer` to fix angular issue [#24397](https://github.com/angular/angular/issues/24397)
-    * Latest packages' versions
-    * Documentation
-* v6.1.1 (2018-06-12)
-    * Downgrade `document-register-element` to `v1.8.1` to fix angular issue [#24390](https://github.com/angular/angular/issues/24390)
-    * Latest packages' versions
-    * Documentation
-* v6.1.0 (2018-06-04)
-    * Expose `BrowserAnimationsModule` instead of `BrowserModule` to support module with animations.
-    * Fix configuration in `ng-package*.json`
-    * Latest packages' versions
-    * Documentation
-* v6.0.3 (2018-05-25)
-    * `Angular v6.0.3+`
-    * Documentation
-* v6.0.2 (2018-05-13)
-    * Delete barrels
-    * Documentation
-* v6.0.1 (2018-05-11)
-    * `Angular v6.0.1+`
-    * Documentation
-* v6.0.0 (2018-05-07)
-    * `Angular v6.0.0+`
-    * Implementation of `ElementsLoader` factory
+* v6.4.0 (2018-07-26)
+    * `Angular v6.1.0+`
     * Documentation
     
 [Back to top](#installation)
