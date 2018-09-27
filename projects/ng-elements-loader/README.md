@@ -32,7 +32,7 @@
 
 This module exposes an `Angular's` service to load easily [custom elements](https://angular.io/guide/elements) in your `Angular` application.
 
-We support `Angular` version `6.1.0+`.
+We support `Angular` version `6.1.7-`.
 
 ## Installation
 
@@ -406,6 +406,9 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
+* v6.4.1 (2018-09-26)
+    * Fix version to `Angular v6.1.7` to avoid the bug reported in this [issue](https://github.com/angular/angular/issues/26128)
+    * Documentation
 * v6.4.0 (2018-07-26)
     * `Angular v6.1.0+`
     * Documentation

@@ -1,6 +1,6 @@
 {
     "name": "@hapiness/custom-elements-loader",
-    "version": "6.4.0",
+    "version": "6.4.1",
     "description": "Factory to load Angular Custom Elements inside JavaScript's applications like React.js, Vue.js or just standalone",
     "private": false,
     "repository": {
@@ -21,18 +21,6 @@
     ],
     "contributors": [
         {
-            "name": "Julien Fauville",
-            "url": "https://github.com/Juneil"
-        },
-        {
-            "name": "Antoine Gomez",
-            "url": "https://github.com/antoinegomez"
-        },
-        {
-            "name": "Sébastien Ritz",
-            "url": "https://github.com/reptilbud"
-        },
-        {
             "name": "Nicolas Jessel",
             "url": "https://github.com/njl07"
         }
@@ -42,17 +30,17 @@
         "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
     },
     "dependencies": {
-        "@angular/animations": "^6.1.0",
-        "@angular/common": "^6.1.0",
-        "@angular/core": "^6.1.0",
-        "@angular/compiler": "^6.1.0",
-        "@angular/elements": "^6.1.0",
-        "@angular/platform-browser": "^6.1.0",
-        "@angular/platform-browser-dynamic": "^6.1.0",
-        "@hapiness/ng-elements-loader": "^6.4.0",
+        "@angular/animations": "6.1.7",
+        "@angular/common": "6.1.7",
+        "@angular/core": "6.1.7",
+        "@angular/compiler": "6.1.7",
+        "@angular/elements": "6.1.7",
+        "@angular/platform-browser": "6.1.7",
+        "@angular/platform-browser-dynamic": "6.1.7",
+        "@hapiness/ng-elements-loader": "^6.4.1",
         "core-js": "^2.5.7",
         "document-register-element": "~1.8.1",
-        "rxjs": "^6.2.2",
+        "rxjs": "^6.3.3",
         "zone.js": "^0.8.26"
     }
 }
