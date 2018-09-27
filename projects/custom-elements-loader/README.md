@@ -198,7 +198,7 @@ Your `custom-element` module is now ready to be used so you have to publish it b
 
 ### 2) *made-with-love* custom element in your JavaScript application
 
-Create a `JavaScript` application with your **module** and `@hapiness/ng-elements-loader` in dependencies.
+Create a `JavaScript` application with your **module** and `@hapiness/custom-elements-loader` in dependencies.
 
 Install all `dependencies` your module must have if not already installed.
 
@@ -408,6 +408,9 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.4.1 (2018-09-26)
+    * Fix version to `Angular v6.1.7` to avoid the bug reported in this [issue](https://github.com/angular/angular/issues/26128)
+    * Documentation
 * v6.4.0 (2018-07-26)
     * `Angular v6.1.0+`
     * Documentation
