@@ -1,6 +1,6 @@
 {
     "name": "@hapiness/custom-elements-loader",
-    "version": "6.4.1",
+    "version": "6.4.2",
     "description": "Factory to load Angular Custom Elements inside JavaScript's applications like React.js, Vue.js or just standalone",
     "private": false,
     "repository": {
@@ -30,14 +30,14 @@
         "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
     },
     "dependencies": {
-        "@angular/animations": "6.1.7",
-        "@angular/common": "6.1.7",
-        "@angular/core": "6.1.7",
-        "@angular/compiler": "6.1.7",
-        "@angular/elements": "6.1.7",
-        "@angular/platform-browser": "6.1.7",
-        "@angular/platform-browser-dynamic": "6.1.7",
-        "@hapiness/ng-elements-loader": "^6.4.1",
+        "@angular/animations": "^6.1.10",
+        "@angular/common": "^6.1.10",
+        "@angular/core": "^6.1.10",
+        "@angular/compiler": "^6.1.10",
+        "@angular/elements": "^6.1.10",
+        "@angular/platform-browser": "^6.1.10",
+        "@angular/platform-browser-dynamic": "^6.1.10",
+        "@hapiness/ng-elements-loader": "^6.4.2",
         "core-js": "^2.5.7",
         "document-register-element": "~1.8.1",
         "rxjs": "^6.3.3",

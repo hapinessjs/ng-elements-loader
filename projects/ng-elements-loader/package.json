@@ -1,6 +1,6 @@
 {
     "name": "@hapiness/ng-elements-loader",
-    "version": "6.4.1",
+    "version": "6.4.2",
     "description": "Service to load Angular Custom Elements inside Angular's applications",
     "private": false,
     "repository": {
@@ -27,12 +27,12 @@
         "url": "https://github.com/hapinessjs/ng-elements-loader/issues"
     },
     "peerDependencies": {
-        "@angular/common": "6.1.7",
-        "@angular/core": "6.1.7",
-        "@angular/compiler": "6.1.7",
-        "@angular/elements": "6.1.7",
-        "@angular/platform-browser": "6.1.7",
-        "@angular/platform-browser-dynamic": "6.1.7",
+        "@angular/common": "^6.1.10",
+        "@angular/core": "^6.1.10",
+        "@angular/compiler": "^6.1.10",
+        "@angular/elements": "^6.1.10",
+        "@angular/platform-browser": "^6.1.10",
+        "@angular/platform-browser-dynamic": "^6.1.10",
         "core-js": "^2.5.7",
         "document-register-element": "~1.8.1",
         "rxjs": "^6.3.3",
