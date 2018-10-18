@@ -4,11 +4,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ElementsLoaderService } from '@hapiness/ng-elements-loader';
 
 @NgModule({
-    imports: [
-        BrowserAnimationsModule
-    ]
+    imports: [ BrowserAnimationsModule ],
+    providers: [ ElementsLoaderService ]
 })
 export class ElementsLoaderModule {
-    constructor(private _elementsLoaderService: ElementsLoaderService) {}
-    ngDoBootstrap() {}
+    ngDoBootstrap() {
+    }
 }

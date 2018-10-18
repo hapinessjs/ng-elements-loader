@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.4.0"
+    "@hapiness/custom-elements-loader": "^6.4.2"
   }
 }
 ```
@@ -235,6 +235,8 @@ We create a `HTML`file with our `custom element` inside.
 // POLYFILLS
 import 'zone.js/dist/zone';
 import 'document-register-element';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
 
 import { ElementsLoader } from '@hapiness/custom-elements-loader';
 import { MadeWithLoveModule } from 'made-with-love';
@@ -262,6 +264,8 @@ Loading of the component happens inside `main.ts` file.
 ```typescript
 import 'zone.js/dist/zone';
 import 'document-register-element';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
 ```
 
 - Additional **polyfills** can be added if needed:
@@ -286,8 +290,12 @@ import 'document-register-element';
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
 
-/** IE10 and IE11 requires the following for the Reflect API. */
-// import 'core-js/es6/reflect';
+/**
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
+ **/
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 ```
 
 
@@ -391,6 +399,8 @@ We set a **listener** to catch `sayHello` event and do what we want:
 // POLYFILLS
 import 'zone.js/dist/zone';
 import 'document-register-element';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
 
 import { ElementsLoader } from '@hapiness/custom-elements-loader';
 import { HelloWorldModule } from 'hello-world';
@@ -408,6 +418,11 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v6.4.2 (2018-10-18)
+    * `Angular v6.1.10+`
+    * Explain how to add new polyfills for `reflect api` to solve bug reported in this [issue](https://github.com/angular/angular/issues/26128)
+    * Provide `ElementsLoaderService` in `ElementsLoaderModule` to solve bug reported in this [issue](https://github.com/angular/angular/issues/25813)
+    * Documentation
 * v6.4.1 (2018-09-26)
     * Fix version to `Angular v6.1.7` to avoid the bug reported in this [issue](https://github.com/angular/angular/issues/26128)
     * Documentation
