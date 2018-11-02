@@ -32,7 +32,7 @@
 
 This module exposes an `Angular's` service to load easily [custom elements](https://angular.io/guide/elements) in your `Angular` application.
 
-We support `Angular` version `6.1.7-`.
+We support `Angular` version `7.0.2+`.
 
 ## Installation
 
@@ -183,9 +183,9 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^6.1.0",
-    "@angular/core": "^6.1.0",
-    "@hapiness/ng-elements-loader": "^6.4.0"
+    "@angular/common": "^7.0.2",
+    "@angular/core": "^7.0.2",
+    "@hapiness/ng-elements-loader": "^7.0.0"
   }
 }
 ```
@@ -406,6 +406,9 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 ## Change History
+* v7.0.0 (2018-11-02)
+    * `Angular v7.0.2+`
+    * Documentation
 * v6.4.2 (2018-10-18)
     * `Angular v6.1.10+`
     * Documentation

@@ -1,31 +1,35 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "paths": {
-      "@hapiness/ng-elements-loader": [
-        "dist/ng-elements-loader"
-      ],
-      "@hapiness/custom-elements-loader": [
-        "dist/custom-elements-loader"
-      ],
-      "@hapiness/ng-shadow-dom-renderer": [
-        "dist/ng-shadow-dom-renderer"
-      ]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "paths": {
+            "@hapiness/ng-elements-loader": [
+                "dist/ng-elements-loader"
+            ],
+            "@hapiness/custom-elements-loader": [
+                "dist/custom-elements-loader"
+            ],
+            "@hapiness/ng-elements-loader/*": [
+                "dist/ng-elements-loader/*"
+            ],
+            "@hapiness/custom-elements-loader/*": [
+                "dist/custom-elements-loader/*"
+            ]
+        }
     }
-  }
 }

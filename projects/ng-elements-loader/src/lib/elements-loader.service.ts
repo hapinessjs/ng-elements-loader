@@ -1,12 +1,8 @@
-import {
-    Compiler, Inject,
-    Injectable, Injector,
-    Type
-} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Compiler, Inject, Injectable, Injector, Type } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { forkJoin, from, merge, Observable, of, throwError } from 'rxjs';
-import { flatMap, filter, map, tap, toArray } from 'rxjs/operators';
+import { filter, flatMap, map, tap, toArray } from 'rxjs/operators';
 import { CustomElementModuleSelector } from './elements-registry';
 
 @Injectable({

@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^6.4.2"
+    "@hapiness/custom-elements-loader": "^7.0.0"
   }
 }
 ```
@@ -235,7 +235,6 @@ We create a `HTML`file with our `custom element` inside.
 // POLYFILLS
 import 'zone.js/dist/zone';
 import 'document-register-element';
-import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 
 import { ElementsLoader } from '@hapiness/custom-elements-loader';
@@ -264,7 +263,6 @@ Loading of the component happens inside `main.ts` file.
 ```typescript
 import 'zone.js/dist/zone';
 import 'document-register-element';
-import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 ```
 
@@ -289,6 +287,9 @@ import 'core-js/es7/reflect';
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+/** IE10 and IE11 requires the following for the Reflect API. */
+// import 'core-js/es6/reflect';
 
 /**
  * Web Animations `@angular/platform-browser/animations`
@@ -418,6 +419,9 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v7.0.0 (2018-11-02)
+    * `Angular v7.0.2+`
+    * Documentation
 * v6.4.2 (2018-10-18)
     * `Angular v6.1.10+`
     * Explain how to add new polyfills for `reflect api` to solve bug reported in this [issue](https://github.com/angular/angular/issues/26128)
