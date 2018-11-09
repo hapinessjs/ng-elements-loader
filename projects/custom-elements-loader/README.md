@@ -44,7 +44,7 @@ or
 $ npm install --save @hapiness/custom-elements-loader
 ```
 
-**All required dependencies will be automatically installed** : `@angular/animations`, `@angular/common`, `@angular/core`, `@angular/compiler`, `@angular/elements`, `@angular/platform-browser`, `@angular/platform-browser-dynamic`, `@hapiness/ng-elements-loader`, `core-js`, `document-register-element`, `rxjs` and `zone.js`.
+**All required dependencies will be automatically installed** : `@angular/animations`, `@angular/common`, `@angular/core`, `@angular/compiler`, `@angular/elements`, `@angular/platform-browser`, `@angular/platform-browser-dynamic`, `@hapiness/ng-elements-loader`, `@webcomponents/webcomponentsjs`, `core-js`, `document-register-element`, `rxjs` and `zone.js`.
 
 **If your custom element module must have more dependencies, you must install them by yourself**
 
@@ -183,7 +183,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^7.0.0"
+    "@hapiness/custom-elements-loader": "^7.1.0"
   }
 }
 ```
@@ -234,8 +234,13 @@ We create a `HTML`file with our `custom element` inside.
 ```typescript
 // POLYFILLS
 import 'zone.js/dist/zone';
-import 'document-register-element';
 import 'core-js/es7/reflect';
+
+/** In browsers that don't support Custom Elements natively **/
+// import 'document-register-element';
+
+/** You must add this if your application will be compiled in es5 because the specification requires developers use ES2015 classes to define Custom Elements **/ 
+// import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 
 import { ElementsLoader } from '@hapiness/custom-elements-loader';
 import { MadeWithLoveModule } from 'made-with-love';
@@ -262,13 +267,18 @@ Loading of the component happens inside `main.ts` file.
 
 ```typescript
 import 'zone.js/dist/zone';
-import 'document-register-element';
 import 'core-js/es7/reflect';
 ```
 
 - Additional **polyfills** can be added if needed:
 
 ```typescript
+/** In browsers that don't support Custom Elements natively **/
+// import 'document-register-element';
+
+/** You must add this if your application will be compiled in es5 because the specification requires developers use ES2015 classes to define Custom Elements **/ 
+// import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
+
 /** IE9, IE10 and IE11 requires all of the following polyfills. **/
 // import 'core-js/es6/symbol';
 // import 'core-js/es6/object';
@@ -399,9 +409,13 @@ We set a **listener** to catch `sayHello` event and do what we want:
 ```typescript
 // POLYFILLS
 import 'zone.js/dist/zone';
-import 'document-register-element';
-import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
+
+/** In browsers that don't support Custom Elements natively **/
+// import 'document-register-element';
+
+/** You must add this if your application will be compiled in es5 because the specification requires developers use ES2015 classes to define Custom Elements **/ 
+// import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 
 import { ElementsLoader } from '@hapiness/custom-elements-loader';
 import { HelloWorldModule } from 'hello-world';
@@ -419,6 +433,12 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v7.1.0 (2018-11-09)
+    * `Angular v7.0.3+`
+    * `document-register-elements v1.13.1` latest version of the `polyfill` only require if your browser doesn't support `customElement`
+    * `@webcomponents/webcomponentsjs v2.1.3` to fix issue with `es5` compilation outside `Angular` application like explain [here](https://github.com/angular/angular/issues/24390#issuecomment-437361929)
+    * Allow **custom elements registration** in browser even if tag isn't yet present in the `DOM` like this, it can be created or loaded asynchronously after registration
+    * Documentation
 * v7.0.0 (2018-11-02)
     * `Angular v7.0.2+`
     * Documentation
