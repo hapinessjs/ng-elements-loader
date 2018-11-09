@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Compiler, Inject, Injectable, Injector, Type } from '@angular/core';
+import { Compiler, Injectable, Injector, Type } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { forkJoin, from, merge, Observable, of, throwError } from 'rxjs';
 import { filter, flatMap, map, tap, toArray } from 'rxjs/operators';
@@ -13,8 +12,7 @@ export class ElementsLoaderService {
     private _elementsToLoad: Map<string, Type<any>>;
 
     constructor(private _injector: Injector,
-                private _compiler: Compiler,
-                @Inject(DOCUMENT) private _doc: any) {
+                private _compiler: Compiler) {
         this._elementsToLoad = new Map<string, Type<any>>();
     }
 
@@ -50,38 +48,19 @@ export class ElementsLoaderService {
      * Main process to load custom elements
      */
     private _customElements(): Observable<any> {
-        return of(of(typeof this._doc))
+        return of(of(Array.from(this._elementsToLoad.keys())))
             .pipe(
                 flatMap(obs =>
                     merge(
-                        obs
-                            .pipe(
-                                filter(_ => _ !== 'undefined'),
-                                map(_ => Array.from(this._elementsToLoad.keys()).filter((s: any) => this._doc.querySelector(s)))
-                            ),
-                        obs
-                            .pipe(
-                                filter(_ => _ === 'undefined'),
-                                map(_ => [])
-                            )
-                    )
-                ),
-                flatMap(selectors =>
-                    of(of(selectors))
-                        .pipe(
-                            flatMap(obs =>
-                                merge(
-                                    obs.pipe(
-                                        filter(_ => !!_ && !!_.length),
-                                        flatMap(_ => forkJoin(_.map(s => this._register(s))))
-                                    ),
-                                    obs.pipe(
-                                        filter(_ => !_ || !_.length),
-                                        map(_ => undefined as any)
-                                    )
-                                )
-                            )
+                        obs.pipe(
+                            filter(_ => !!_ && !!_.length),
+                            flatMap(_ => forkJoin(_.map(s => this._register(s))))
+                        ),
+                        obs.pipe(
+                            filter(_ => !_ || !_.length),
+                            map(_ => undefined as any)
                         )
+                    )
                 )
             );
     }

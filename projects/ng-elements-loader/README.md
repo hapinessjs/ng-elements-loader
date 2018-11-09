@@ -32,7 +32,7 @@
 
 This module exposes an `Angular's` service to load easily [custom elements](https://angular.io/guide/elements) in your `Angular` application.
 
-We support `Angular` version `7.0.2+`.
+We support `Angular` version `7.0.3+`.
 
 ## Installation
 
@@ -183,9 +183,9 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^7.0.2",
-    "@angular/core": "^7.0.2",
-    "@hapiness/ng-elements-loader": "^7.0.0"
+    "@angular/common": "^7.0.3",
+    "@angular/core": "^7.0.3",
+    "@hapiness/ng-elements-loader": "^7.1.0"
   }
 }
 ```
@@ -405,7 +405,70 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 
 [Back to top](#installation)
 
+#### - Add custom element support in your application
+
+**src/app/app.module.ts**:
+
+```typescript
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SayWithLoveComponent } from './say-with-love/say-with-love.component.ts';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SayWithLoveComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [ AppComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ] // this line must be added
+})
+export class AppModule {
+}
+```
+
+**tsconfig.json**
+
+````json
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015", // this line must switch target from es5 to es2015
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  }
+}
+````
+
+**If your browser doesn't support natively `customElement` like explain [here](https://angular.io/guide/elements#browser-support-for-custom-elements), you must add `document-register-element` inside `src/polyfills.ts` file**
+
 ## Change History
+* v7.1.0 (2018-11-09)
+    * `Angular v7.0.3+`
+    * `document-register-elements v1.13.1` latest version of the `polyfill` only require if your browser doesn't support `customElement`
+    * `@webcomponents/webcomponentsjs v2.1.3` to fix issue with `es5` compilation outside `Angular` application like explain [here](https://github.com/angular/angular/issues/24390#issuecomment-437361929)
+    * Allow **custom elements registration** in browser even if tag isn't yet present in the `DOM` like this, it can be created or loaded asynchronously after registration
+    * Documentation
 * v7.0.0 (2018-11-02)
     * `Angular v7.0.2+`
     * Documentation
