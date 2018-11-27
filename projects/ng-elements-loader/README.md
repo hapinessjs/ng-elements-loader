@@ -32,7 +32,7 @@
 
 This module exposes an `Angular's` service to load easily [custom elements](https://angular.io/guide/elements) in your `Angular` application.
 
-We support `Angular` version `7.0.3+`.
+We support `Angular` version `7.1.0+`.
 
 ## Installation
 
@@ -165,12 +165,10 @@ import { MadeWithLoveComponent } from './made-with-love.component';
     MadeWithLoveComponent
   ]
 })
-export class MadeWithLoveModule implements WithCustomElementComponent {
-  customElementComponent: Type<MadeWithLoveComponent> = MadeWithLoveComponent;
-}
+export class MadeWithLoveModule {}
 ```
 
-**Note**: Your module **must** implement `WithCustomElementComponent` interface exposed by `@hapiness/ng-elements-loader` and, component **must** be declared inside `entryComponents` and `declaration` **meta-data** of `NgModule`. You can see we've declared the component inside `exports` **meta-data** too, like this the module can be use directly, if you want, with normal **import** without `custom-elements`.
+**Note**: Component **must** be declared inside `entryComponents` and `declaration` **meta-data** of `NgModule`. You can see we've declared the component inside `exports` **meta-data** too, like this the module can be use directly, if you want, with normal **import** without `custom-elements`.
 
 #### - Dependencies
 
@@ -183,9 +181,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^7.0.3",
-    "@angular/core": "^7.0.3",
-    "@hapiness/ng-elements-loader": "^7.1.0"
+    "@hapiness/ng-elements-loader": "^7.2.0"
   }
 }
 ```
@@ -217,7 +213,7 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ElementsLoaderService } from '@hapiness/ng-elements-loader';
 import { tap } from 'rxjs/operators';
 
-import { MadeWithLoveModule } from 'made-with-love';
+import { MadeWithLoveComponent } from 'made-with-love';
 
 @Component({
   selector: 'say-with-love',
@@ -228,18 +224,19 @@ export class SayWithLoveComponent implements OnInit {
 
   constructor(private _el: ElementRef, private _rd: Renderer2, private _elementsLoaderService: ElementsLoaderService) {
     const element = this._rd.createElement('wc-made-with-love');
-    this._rd.setAttribute(element, 'name', 'Web Component');
+    this._rd.setAttribute(element, 'name', 'Hapiness Framework');
+    this._rd.setAttribute(element, 'url', 'https://github.com/hapinessjs/');
     this._rd.setAttribute(element, 'size', '2');
     this._rd.appendChild(this._el.nativeElement, element);
   }
 
   ngOnInit(): void {
-    this._elementsLoaderService.loadContainingCustomElements({
+    this._elementsLoaderService.registerContainingCustomElements({
       selector: 'wc-made-with-love',
-      module: MadeWithLoveModule
+      component: MadeWithLoveComponent
     })
       .pipe(
-        tap(_ => console.log('wc-made-with-love loaded'))
+        tap(_ => console.log('wc made-with-love loaded'))
       )
       .subscribe();
   }
@@ -247,6 +244,29 @@ export class SayWithLoveComponent implements OnInit {
 ```
 
 `say-with-love.component.html` and `say-with-love.component.css` files are empty.
+
+**src/app/app.module.ts**
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MadeWithLoveModule } from 'made-with-love';
+import { SayWithLoveComponent } from './say-with-love/say-with-love.component';
+
+@NgModule({
+  declarations: [
+    SayWithLoveComponent
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    MadeWithLoveModule
+  ],
+  providers: [],
+  bootstrap: [ SayWithLoveComponent ]
+})
+export class AppModule {
+}
+```
 
 #### - Explanation
 
@@ -275,28 +295,30 @@ this._rd.appendChild(this._el.nativeElement, element);
 Loading of the component happens inside `OnInit` process.
 
 ```typescript
-this._elementsLoaderService.loadContainingCustomElements({
+this._elementsLoaderService.registerContainingCustomElements({
   selector: 'wc-made-with-love',
-  module: MadeWithLoveModule
+  component: MadeWithLoveComponent
 })
   .pipe(
-    tap(_ => console.log('wc-made-with-love loaded'))
+    tap(_ => console.log('wc made-with-love loaded'))
   )
   .subscribe();
 ```
 
-We call `loadContainingCustomElements` method of `ElementsLoaderService` from `@hapiness/ng-elements-loader`.
+We call `registerContainingCustomElements` method of `ElementsLoaderService` from `@hapiness/ng-elements-loader`.
 
-This method takes `CustomElementModuleSelector` or `CustomElementModuleSelector[]` in parameter.
+This method takes `CustomElementComponentSelector` or `CustomElementComponentSelector[]` in parameter.
 
 ```typescript
-export interface CustomElementModuleSelector {
+export interface CustomElementComponentSelector {
     selector: string;
-    module: Type<any>;
+    component: Type<any>;
 }
 ```
 
-**Selector** is the `custom tag` of your `custom element` and **module** is the `Angular` module contains the component.
+**Selector** is the `custom tag` of your `custom element` and **component** is the `Angular` component presents in `entryComponents` and `declarations` of `MadeWithLoveModule`.
+
+`MadeWithLoveModule` have to be imported inside the main module of your application `AppModule` to compile `MadeWithLoveComponent` declared in `entryComponents`.
 
 #### - Show the result
 
@@ -365,7 +387,7 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ElementsLoaderService } from '@hapiness/ng-elements-loader';
 import { tap } from 'rxjs/operators';
 
-import { HelloWorldModule } from 'hello-world';
+import { HelloWorldComponent } from 'hello-world';
 
 @Component({
   selector: 'say-hello',
@@ -381,12 +403,12 @@ export class SayHelloComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._elementsLoaderService.loadContainingCustomElements({
+    this._elementsLoaderService.registerContainingCustomElements({
       selector: 'wc-hello-world',
-      module: HelloWorldModule
+      component: HelloWorldComponent
     })
       .pipe(
-        tap(_ => console.log('wc-hello-world loaded'))
+        tap(_ => console.log('wc hello-world loaded'))
       )
       .subscribe();
   }
@@ -406,33 +428,6 @@ this._rd.listen(element, 'sayHello', (event: any) => this.alertHello(event.detai
 [Back to top](#installation)
 
 #### - Add custom element support in your application
-
-**src/app/app.module.ts**:
-
-```typescript
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { SayWithLoveComponent } from './say-with-love/say-with-love.component.ts';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    SayWithLoveComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [ AppComponent ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ] // this line must be added
-})
-export class AppModule {
-}
-```
 
 **tsconfig.json**
 
@@ -463,6 +458,12 @@ export class AppModule {
 **If your browser doesn't support natively `customElement` like explain [here](https://angular.io/guide/elements#browser-support-for-custom-elements), you must add `document-register-element` inside `src/polyfills.ts` file**
 
 ## Change History
+* v7.2.0 (2018-11-27)
+    * `Angular v7.1.0+`
+    * Add `ElementsLoaderService.registerContainingCustomElements()` method to **be used for AoT compiler**
+    * `ElementsLoaderService.loadContainingCustomElements()` method **must be used only for JiT compiler**
+    * Explain how to create an **optimized `webcomponent` bundle** with this [tutorial](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/AOT.md)
+    * Documentation
 * v7.1.0 (2018-11-09)
     * `Angular v7.0.3+`
     * `document-register-elements v1.13.1` latest version of the `polyfill` only require if your browser doesn't support `customElement`

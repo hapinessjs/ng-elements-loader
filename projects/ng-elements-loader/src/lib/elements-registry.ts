@@ -15,3 +15,11 @@ export interface CustomElementModuleSelector {
     selector: string;
     module: Type<any>;
 }
+
+/**
+ * Interface to map component with its selector to be loaded as custom element when displayed in the DOM
+ */
+export interface CustomElementComponentSelector {
+    selector: string;
+    component: Type<any>;
+}
