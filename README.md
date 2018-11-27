@@ -37,7 +37,8 @@ These projects are created to load easily `Angular` [custom elements](https://an
 To know how to use both projects follow these tutorials:
 
 - [@hapiness/ng-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/README.md) => for `Angular` applications
-- [@hapiness/custom-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/custom-elements-loader/README.md) => for others applications
+- [@hapiness/custom-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/custom-elements-loader/README.md) => for others applications in **JiT mode**
+- [@hapiness/ng-elements-loader](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/AOT.md) => for others applications in **AoT mode**
 
 ## Maintainers
 

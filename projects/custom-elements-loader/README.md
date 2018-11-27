@@ -32,6 +32,8 @@
 
 This module exposes a factory to use [ElementsLoaderService](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader) inside JavaScript's applications like `React.js`, `Vue.js` or just `standalone`.
 
+**THIS MODULE IS ONLY USED IN JiT (Just-in-Time) MODE AND THE BUILD WON'T BE THE MOST OPTIMIZED - TO HAVE THE BEST WAY AND THE BEST OPTIMIZED CUSTOM ELEMENTS INTEGRATION WITH AoT (Ahead-of-Time) MODE, CHECK [HERE](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/AOT.md)**
+
 **DON'T USE THIS MODULE FOR ANGULAR APPLICATION**
 
 ## Installation
@@ -183,7 +185,7 @@ The minimum `package.json` file for your module is described below:
   "name": "made-with-love",
   "version": "1.0.0",
   "peerDependencies": {
-    "@hapiness/custom-elements-loader": "^7.1.0"
+    "@hapiness/custom-elements-loader": "^7.2.0"
   }
 }
 ```
@@ -433,6 +435,12 @@ document.querySelector('hello-world').addEventListener('sayHello', (event: any) 
 [Back to top](#installation)
 
 ## Change History
+* v7.2.0 (2018-11-27)
+    * `Angular v7.1.0+`
+    * Add `ElementsLoaderService.registerContainingCustomElements()` method to **be used for AoT compiler**
+    * `ElementsLoaderService.loadContainingCustomElements()` method **must be used only for JiT compiler**
+    * Explain how to create an **optimized `webcomponent` bundle** with this [tutorial](https://github.com/hapinessjs/ng-elements-loader/blob/master/projects/ng-elements-loader/AOT.md)
+    * Documentation
 * v7.1.0 (2018-11-09)
     * `Angular v7.0.3+`
     * `document-register-elements v1.13.1` latest version of the `polyfill` only require if your browser doesn't support `customElement`
